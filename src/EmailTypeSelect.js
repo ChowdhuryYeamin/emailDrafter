@@ -9,7 +9,7 @@ const EmailTypeSelect = ({ value, handleChange }) => (
     <option value="Business">Business</option>
     <option value="Personal">Personal</option>
     <option value="Support">Support</option>
-    // Add more email types as needed.
+    {/*Add more email types as needed*/}
   </select>
 );
 
