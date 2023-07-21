@@ -1,6 +1,7 @@
 // App.js
 
 import React from 'react';
+import './App.css';
 import TextInput from './TextInput';
 import EmailTypeSelect from './EmailTypeSelect';
 import GenerateButton from './GenerateButton';
@@ -40,29 +41,34 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Email Drafting Assistant</h1>
+      <div className="App">
+      <h1 className="component">Email Drafting Assistant</h1>
 
-        <TextInput
-          value={this.state.userInput}
-          handleChange={this.handleInputChange}
+      <TextInput
+        value={this.state.userInput}
+        handleChange={this.handleInputChange}
+        className="component"
+      />
+
+      <EmailTypeSelect
+        value={this.state.emailType}
+        handleChange={this.handleDropdownChange}
+        className="component"
+      />
+
+      <GenerateButton
+        handleGenerate={this.handleGenerateEmail}
+        loading={this.state.loading}
+        className="component"
+      />
+
+      {this.state.isDraftGenerated && (
+        <GeneratedEmailDisplay
+          emailDraft={this.state.emailDraft}
+          className="component"
         />
-
-        <EmailTypeSelect
-          value={this.state.emailType}
-          handleChange={this.handleDropdownChange}
-        />
-
-        <GenerateButton
-          handleGenerate={this.handleGenerateEmail}
-        />
-
-        {this.state.isDraftGenerated && (
-          <GeneratedEmailDisplay
-            emailDraft={this.state.emailDraft}
-          />
-        )}
-      </div>
+      )}
+    </div>
     );
   }
 }

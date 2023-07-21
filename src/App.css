@@ -1,6 +1,19 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: linear-gradient(to right, lightblue, white);
+} 
+
+.component {
+  margin-bottom: 20px;
 }
+
 
 .App-logo {
   height: 40vmin;

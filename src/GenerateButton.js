@@ -1,11 +1,11 @@
-// GenerateButton.js
-
 import React from 'react';
 
-// This is a functional component that displays a button.
-// It takes one prop: handleGenerate (a function to run when the button is clicked).
-const GenerateButton = ({ handleGenerate }) => (
-  <button onClick={handleGenerate}>Generate Email</button>
+// This functional component displays a button.
+// It takes two props: 
+// handleGenerate (a function to run when the button is clicked),
+// and className (a string containing CSS class names).
+const GenerateButton = ({ handleGenerate, className }) => (
+  <button onClick={handleGenerate} className={className}>Generate Email</button>
 );
 
 export default GenerateButton;
